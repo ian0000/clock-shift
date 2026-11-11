@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://f34yltd613xy"]
+
+[ext_resource type="Texture2D" uid="uid://cy5m0e2u41pit" path="res://assets/kenney_pixel-platformer-industrial-expansion/Tiles/tile_0064.png" id="1_2byl4"]
+[ext_resource type="Script" uid="uid://c8u388eedrk7s" path="res://scripts/interactables.gd" id="1_auae5"]
+[ext_resource type="Texture2D" uid="uid://c5ol4lmvcheps" path="res://assets/kenney_pixel-platformer-industrial-expansion/Tiles/tile_0065.png" id="3_56pwi"]
+[ext_resource type="Texture2D" uid="uid://biv54xwlv5m7c" path="res://assets/kenney_pixel-platformer-industrial-expansion/Tiles/tile_0065_b.png" id="4_nydeg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3a5br"]
+size = Vector2(32, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i60to"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2byl4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="button" type="Node2D" unique_id=1125790426]
+script = ExtResource("1_auae5")
+normal_texture = ExtResource("1_2byl4")
+active_texture = ExtResource("3_56pwi")
+pressed_texture = ExtResource("4_nydeg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=907418341]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=594941844]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_3a5br")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=658899649]
+sprite_frames = SubResource("SpriteFrames_i60to")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

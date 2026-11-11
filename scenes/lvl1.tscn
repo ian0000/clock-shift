@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bdxmmyrit02y1"]
+
+[ext_resource type="PackedScene" uid="uid://f34yltd613xy" path="res://interactables/button.tscn" id="1_0jtq1"]
+[ext_resource type="PackedScene" uid="uid://dpu16unnbasg1" path="res://player/player.tscn" id="1_spoxl"]
+[ext_resource type="PackedScene" uid="uid://udwmcus2nfru" path="res://layouts/base_layout.tscn" id="2_olpnp"]
+
+[node name="lvl1" type="Node2D" unique_id=1784867934]
+
+[node name="Node2D" parent="." unique_id=1125790426 instance=ExtResource("1_0jtq1")]
+position = Vector2(172, 600)
+
+[node name="BaseLayout" parent="." unique_id=741436365 instance=ExtResource("2_olpnp")]
+
+[node name="player" parent="." unique_id=578758560 instance=ExtResource("1_spoxl")]
+position = Vector2(347, 220)
