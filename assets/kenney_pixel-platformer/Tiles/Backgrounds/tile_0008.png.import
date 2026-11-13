@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy5m0e2u41pit"
-path="res://.godot/imported/tile_0064.png-caf16b9aeb7a690f0ad7d2c95fb282f5.ctex"
+uid="uid://dkw8x7ts3yh4l"
+path="res://.godot/imported/tile_0008.png-3985e1902f468a738c5651e8381066de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney_pixel-platformer-industrial-expansion/Tiles/tile_0064.png"
-dest_files=["res://.godot/imported/tile_0064.png-caf16b9aeb7a690f0ad7d2c95fb282f5.ctex"]
+source_file="res://assets/kenney_pixel-platformer/Tiles/Backgrounds/tile_0008.png"
+dest_files=["res://.godot/imported/tile_0008.png-3985e1902f468a738c5651e8381066de.ctex"]
 
 [params]
 

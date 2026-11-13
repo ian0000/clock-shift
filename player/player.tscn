@@ -34,7 +34,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"fall",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -60,9 +60,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_7pqkx")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"jump",
-"speed": 9.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -74,9 +74,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_r7pn3")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"land",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -110,19 +110,24 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_728xb"]
 
-[node name="player" type="CharacterBody2D" unique_id=578758560]
+[node name="player" type="CharacterBody2D" unique_id=578758560 node_paths=PackedStringArray("animacion")]
 z_index = 5
 collision_layer = 4
 platform_wall_layers = 1
 script = ExtResource("1_65viv")
+animacion = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1819525295]
 shape = SubResource("CapsuleShape2D_3a5br")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=947671890]
 sprite_frames = SubResource("SpriteFrames_728xb")
-animation = &"land"
-frame_progress = 0.7482779
+animation = &"run"
+frame_progress = 0.87711525
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D" unique_id=51568395]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=389501939]
 collision_layer = 0
@@ -130,3 +135,5 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=908158741]
 shape = SubResource("CapsuleShape2D_728xb")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
