@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bfmkgn27rrf6s" path="res://assets/BasicPlatformerCharacter/BasicPlatformerCharacter/Individual Sprites/Run/playerRun8.png" id="19_pnw6m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3a5br"]
+height = 28.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_728xb"]
 animations = [{
@@ -109,6 +110,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_728xb"]
+height = 28.0
 
 [node name="player" type="CharacterBody2D" unique_id=578758560 node_paths=PackedStringArray("animacion")]
 z_index = 5
@@ -122,8 +124,7 @@ shape = SubResource("CapsuleShape2D_3a5br")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=947671890]
 sprite_frames = SubResource("SpriteFrames_728xb")
-animation = &"run"
-frame_progress = 0.87711525
+animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D" unique_id=51568395]
 zoom = Vector2(2, 2)

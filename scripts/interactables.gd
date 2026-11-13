@@ -1,11 +1,6 @@
 class_name Interactable
 extends Node
 
-@export var normal_texture: Texture2D
-@export var active_texture: Texture2D
-@export var pressed_texture: Texture2D
-@export var animated_sprite: AnimatedSprite2D
-
 var player_nearby: Node2D = null
 
 # Called when the node enters the scene tree for the first time.

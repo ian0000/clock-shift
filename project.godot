@@ -15,6 +15,10 @@ run/main_scene="res://scenes/main_screen.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalController="*uid://0up7v4rsjcfb"
+
 [display]
 
 window/stretch/mode="canvas_items"

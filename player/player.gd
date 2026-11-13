@@ -67,7 +67,7 @@ func _process(delta: float) -> void:
 	if _is_dead:
 		return
 	if Input.is_action_just_pressed("Interact") and current_interactable != null:
-		print("interaccion")
+		current_interactable.interact()
 		
 func start_dash(direction):
 	_dash = false

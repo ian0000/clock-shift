@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dcx0pudtd3gyg"]
+
+[ext_resource type="Script" uid="uid://dgfe2bdijuaoi" path="res://scripts/puerta.gd" id="1_uvdjg"]
+[ext_resource type="Texture2D" uid="uid://co8shb5w4p4ed" path="res://icon.svg" id="2_83dcw"]
+[ext_resource type="Texture2D" uid="uid://dpk71h10hlnvs" path="res://assets/kenney_pixel-platformer/Tiles/tile_0009.png" id="3_83dcw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3a5br"]
+size = Vector2(26, 64)
+
+[node name="door" type="Node2D" unique_id=2043380438 groups=["level_doors"]]
+script = ExtResource("1_uvdjg")
+door_texture = ExtResource("3_83dcw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1226149062]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2115884437]
+shape = SubResource("RectangleShape2D_3a5br")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1339992129]
+scale = Vector2(0.2, 0.5)
+texture = ExtResource("2_83dcw")
+
+[node name="Indicator" type="Node2D" parent="." unique_id=380652671]
+position = Vector2(0, -38)
+
+[node name="Background" type="Sprite2D" parent="Indicator" unique_id=482007803]
+position = Vector2(-5.364418e-07, 0)
+scale = Vector2(1.4444445, 1)
+texture = ExtResource("3_83dcw")
+
+[node name="Label" type="Label" parent="Indicator" unique_id=1088461340]
+anchors_preset = -1
+anchor_left = -0.039860725
+anchor_right = 0.017149078
+offset_left = -14.000001
+offset_top = 10.0
+offset_right = 26.0
+offset_bottom = 33.0
+scale = Vector2(0.7124688, 0.4727332)
+text = "EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

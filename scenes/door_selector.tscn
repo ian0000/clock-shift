@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c3auybucvb51w"]
+
+[ext_resource type="PackedScene" uid="uid://dcx0pudtd3gyg" path="res://scenes/door.tscn" id="1_ahgf0"]
+[ext_resource type="Texture2D" uid="uid://cqtua52jtk2cd" path="res://assets/kenney_pixel-platformer/Tiles/tile_0046.png" id="2_kgjdq"]
+[ext_resource type="Script" uid="uid://bxkvlvf2bd3bu" path="res://scripts/door_selector.gd" id="3_selector"]
+[ext_resource type="Script" uid="uid://l2mhicrr86xq" path="res://scripts/door_option.gd" id="4_option"]
+[ext_resource type="Texture2D" uid="uid://eg2cqucyshqc" path="res://assets/kenney_pixel-platformer/Tiles/tile_0067.png" id="5_blue"]
+[ext_resource type="Texture2D" uid="uid://cf1dqmlqdjuf1" path="res://assets/kenney_pixel-platformer/Tiles/tile_0066.png" id="6_lever"]
+[ext_resource type="Texture2D" uid="uid://j8q30wiprow8" path="res://assets/kenney_pixel-platformer/Tiles/tile_0069.png" id="7_key"]
+
+[sub_resource type="Resource" id="Resource_door_1"]
+script = ExtResource("4_option")
+door_texture = ExtResource("2_kgjdq")
+door_text = "I"
+next_level = 2
+
+[sub_resource type="Resource" id="Resource_door_2"]
+script = ExtResource("4_option")
+door_texture = ExtResource("5_blue")
+door_text = "II"
+next_level = 3
+
+[sub_resource type="Resource" id="Resource_door_3"]
+script = ExtResource("4_option")
+door_texture = ExtResource("6_lever")
+door_text = "III"
+next_level = 4
+
+[sub_resource type="Resource" id="Resource_door_4"]
+script = ExtResource("4_option")
+door_texture = ExtResource("7_key")
+door_text = "IV"
+next_level = 5
+
+[node name="DoorSelector" type="Node2D" unique_id=2019051241]
+script = ExtResource("3_selector")
+doors = Array[ExtResource("4_option")]([SubResource("Resource_door_1"), SubResource("Resource_door_2"), SubResource("Resource_door_3"), SubResource("Resource_door_4")])
+
+[node name="DoorVisual" type="Node2D" parent="." unique_id=476439670]
+
+[node name="Puerta" parent="DoorVisual" unique_id=2043380438 instance=ExtResource("1_ahgf0")]
+position = Vector2(0, -32)
+next_level = 2
+door_text = "I"
+door_texture = ExtResource("2_kgjdq")

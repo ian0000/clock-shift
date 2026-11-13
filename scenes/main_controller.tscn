@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dt665yjq4s11e"]
+
+[ext_resource type="Script" uid="uid://8cii5rdxhjpt" path="res://scripts/main_controller.gd" id="1_ligka"]
+[ext_resource type="Script" uid="uid://cl4e41ka3v806" path="res://scripts/game_data.gd" id="2_icx8g"]
+
+[sub_resource type="Resource" id="Resource_iitbn"]
+script = ExtResource("2_icx8g")
+metadata/_custom_type_script = "uid://cl4e41ka3v806"
+
+[node name="MainController" type="Node" unique_id=1189638678]
+script = ExtResource("1_ligka")
+game = SubResource("Resource_iitbn")

@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bukfm3kajkio3" path="res://scripts/main_screen.gd" id="1_main"]
 [ext_resource type="PackedScene" uid="uid://bdxmmyrit02y1" path="res://scenes/lvl1.tscn" id="2_level"]
+[ext_resource type="PackedScene" uid="uid://yakulahsxyx6" path="res://scenes/main_scene.tscn" id="2_lushf"]
+[ext_resource type="PackedScene" uid="uid://dt665yjq4s11e" path="res://scenes/main_controller.tscn" id="3_lushf"]
 
 [node name="MainScreen" type="Node" unique_id=349495225]
 script = ExtResource("1_main")
-niveles = Array[PackedScene]([ExtResource("2_level")])
+niveles = Array[PackedScene]([ExtResource("2_lushf"), ExtResource("2_level")])
+
+[node name="MainController" parent="." unique_id=1189638678 instance=ExtResource("3_lushf")]
